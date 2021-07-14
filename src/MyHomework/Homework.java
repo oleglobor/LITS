@@ -2,8 +2,12 @@ package MyHomework;
 
 public class Homework {
     public static void main(String[] args) {
-        System.out.println("\u0014");
-        System.out.println("\u0077");
-        System.out.println("\u0105");
+        int c = 14;
+        int d = 77;
+        int w = 105;
+
+        System.out.println((char)c);
+        System.out.println((char)d);
+        System.out.println((char)w);
     }
 }
