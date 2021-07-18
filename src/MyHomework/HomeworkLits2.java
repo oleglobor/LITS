@@ -78,7 +78,9 @@ public class HomeworkLits2 {
             }
             System.out.print((array[i]) + "\t");
         }
+        System.out.println();
 //завдання 3
+        System.out.println("Діагоналі");
         int[][] j = {{1, 5, 7, 32, 65, 5, 23, 45, 75, 1},
                 {33, 44, 12, 32, 4, 5, 12, 3, 4, 1},
                 {99, 2, 4, 21, 35, 67, 86, 32, 2, 4},
@@ -92,9 +94,26 @@ public class HomeworkLits2 {
         for (int d = 0; d < j.length; d++) {
             for (int t = 0; t< j.length; t++)
                 System.out.print(j[d][t] + "\t");
+            System.out.println();
         }
-
+        System.out.println("значення, які вище діагоналі");
+        for (int d = 0; d < j.length - 1; d++) {
+            for (int t = 1 + 1; t < j.length; t++) {
+                System.out.print(j[d][t] + " ");
+            }
+        }
+        System.out.println();
+        System.out.println("значення, які нище діагоналі");
+        for (int d = 1; d < j.length; d++) {
+            for (int t = 0; t < d; t++) {
+                System.out.print(j[d][t] + " ");
+            }
+        }
     }
+
+
+
+
     //завдання 4
     public static void iWasvorn(int month){
 
