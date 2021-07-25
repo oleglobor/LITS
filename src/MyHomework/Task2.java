@@ -23,46 +23,63 @@ public class Task2 {
         }
         return max;
     }
-    public static int[] method3(int[] array){ //зворотній масив
-        int[]a= new int[array.length];
-        for (int i = array.length - 1; i >= 0; i --) {
-
-
+    public static int[] method3(int[] a){ //зворотній масив
+        int[]arr= new int[a.length];
+        for (int i = a.length - 1; i >0;) {
+            for (int j = 0; j < a.length; j++) {
+                arr[j] = a[i];
+                i--;
+            }
 
     }
-        return array;
+        return arr;
     }
-    public void method4(int[]array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0)
-                System.out.print((array[i]) + "\t");
+    public static void method4(int[] a) {
+        System.out.print("\nOdds : " );
+        for (int i = 0; i < a.length; i++) {
+            if ((i+1) % 2 != 0)
+                System.out.print((a[i]) + "\t");
         }
 
     }
-    public static void method5(int[]array) {
-        for (int i = array.length - 1; i > 1; i--) {
-            for (int a = 0; a < i; a++) {
-                if (array[a] > array[a + 1]) {
-                    int tmp = array[a];
-                    array[a] = array[a + 1];
-                    array[a + 1] = tmp;
+    public static void method5(int[]a) {
+        System.out.print("\nDrink beer, i sort it: ");
+        for (int i = a.length - 1; i > 1; i--) {
+            for (int b = 0; b < i; b++) {
+                if (a[b] > a[b + 1]) {
+                    int tmp = a[b];
+                    a[b] = a[b + 1];
+                    a[b + 1] = tmp;
                 }
             }
+            System.out.print((a[i]) + "\t");
         }
 
 
 
+
+    }
+    public static void outputArray(int[] a) {
+        for (int arr : a) {
+            System.out.print(arr + " ");
+        }
     }
     public static void main (String[]args){
         Task2 task2 = new Task2();
         Random r = new Random();
-        int[] array = new int[20];
-        for (int b = 0; b < array.length; b++) {
-            array[b] = r.nextInt(47);
+        int[] a = new int[20];
+        System.out.println("Array :");
+        for (int b = 0; b < a.length; b++) {
+            a[b] = r.nextInt(47);
+            System.out.print((a[b])+ "\t");
         }
-        System.out.println("\nMax : " + Task2.method2(array));
-        System.out.println("Min : " + Task2.method1(array));
-        System.out.print("Reverse array : " + Task2.method3(array));
+        System.out.println("");
+        System.out.println("Max : " + Task2.method2(a));
+        System.out.println("Min : " + Task2.method1(a));
+        System.out.print("Reverse array : " );
+        Task2.outputArray(Task2.method3(a));
+        Task2.method4(a);
+        Task2.method5(a);
 
 
 
